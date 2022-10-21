@@ -1,0 +1,1 @@
+cp -r static/js/*.js public/static

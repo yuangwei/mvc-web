@@ -1,18 +1,22 @@
 {
-  "name": "my-strapi-project",
+  "name": "cms-template",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
   "scripts": {
     "dev": "run-p dev:*",
     "dev:web": "strapi develop",
-    "start": "strapi start",
-    "build:web": "strapi build",
+    "dev:js": "nodemon --watch static/js --ext js,json --exec sh ./static/js/build.sh",
     "dev:style": "tailwindcss -i ./static/css/style.css -o ./public/static/style.css --watch",
+    "start": "strapi start",
+    "build": "run-p build:*",
+    "build:web": "strapi build",
     "build:style": "tailwindcss -i ./static/css/style.css -o ./public/static/style.css --minify",
+    "build:js": "sh ./static/js/build.sh",
     "strapi": "strapi"
   },
   "devDependencies": {
+    "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.5",
     "tailwindcss": "^3.2.0"
   },
@@ -22,6 +26,7 @@
     "@strapi/strapi": "4.4.3",
     "get-paths": "^0.0.7",
     "handlebars": "^4.7.7",
+    "handlebars-layouts": "^3.1.4",
     "pg": "8.6.0",
     "resolve-path": "^1.4.0"
   },
