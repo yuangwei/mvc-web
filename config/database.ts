@@ -4,9 +4,9 @@ export default ({ env }) => ({
     connection: {
       host: env('DATABASE_HOST', 'localhost'),
       port: env.int('DATABASE_PORT', 5432),
-      database: env('DATABASE_NAME', 'globalx'),
+      database: env('DATABASE_NAME', 'cms'),
       user: env('DATABASE_USERNAME', 'postgres'),
-      password: env('DATABASE_PASSWORD', 'wyaqaz123'),
+      password: env('DATABASE_PASSWORD', '******'),
       ssl: env.bool('DATABASE_SSL', false),
     },
   },
